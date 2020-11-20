@@ -35,6 +35,16 @@ router
         context.response.body = "Card deleted!";
         context.response.status = 200;
     })
+    .get("/styles/:filename", async context => {
+        const filename = context.params.filename;
+        await send(context, `/frontend/styles/${filename}`)
+    })
+    .get("/", async context => {
+        await send(context, context.request.url.pathname, {
+          root: `${Deno.cwd()}/frontend`,
+          index: "index.html",
+        })
+    })
 
 app.use(router.routes());
 app.listen({ port: 8000 });
