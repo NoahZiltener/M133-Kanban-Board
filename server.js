@@ -56,9 +56,9 @@ router
         context.response.body = columns;
         context.response.status = 200;
     })
-    .get("/styles/:filename", async context => {
+    .get("/static/:filename", async context => {
         const filename = context.params.filename;
-        await send(context, `/frontend/styles/${filename}`)
+        await send(context, `/frontend/${filename}`)
     })
     .get("/", async context => {
         await send(context, context.request.url.pathname, {
