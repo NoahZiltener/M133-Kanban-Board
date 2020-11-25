@@ -1,0 +1,50 @@
+#divTodo {
+  background-color: orange;
+}
+
+#divInProgress {
+  background-color: lightskyblue;
+}
+
+#divDone {
+  background-color: limegreen;
+}
+
+#todo {
+    padding: 20px 0;
+}
+
+#inProgress {
+    padding: 20px 0;
+}
+
+#done {
+    padding: 20px 0;
+}
+
+.flex-container {
+  display: flex;
+  font: bold;
+  border: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  align-content: stretch;
+}
+
+.flex-container > div {
+  width: 33.3%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.inProgressTasks {
+  background-color: rgb(245, 248, 250);
+}
+
+.toDoTasks {
+  background-color: white;
+}
+
+.doneTasks {
+  background-color: white;
+}
