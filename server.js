@@ -2,6 +2,23 @@ import { Application, Router, send } from "https://deno.land/x/oak@v6.3.1/mod.ts
 
 let cards = [];
 let id = 0;
+let columns = [
+    {
+        id : 1,
+        name: "ToDo",
+        color: "yellow"
+    },
+    {
+        id : 2,
+        name: "In Progress",
+        color: "blue"
+    },
+    {
+        id : 3,
+        name: "Done",
+        color: "green"
+    }
+]
 
 const app = new Application();
 const router = new Router();
@@ -33,6 +50,10 @@ router
         const id = context.params.id
         cards = cards.filter(card => card.id != id)
         context.response.body = "Card deleted!";
+        context.response.status = 200;
+    })
+    .get("/columns", async context => {
+        context.response.body = columns;
         context.response.status = 200;
     })
     .get("/styles/:filename", async context => {
