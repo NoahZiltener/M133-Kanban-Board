@@ -4,19 +4,19 @@ let cards = [];
 let id = 0;
 let columns = [
     {
-        id : 1,
+        id : "todo",
         name: "ToDo",
-        color: "yellow"
+        color: "#C32CC6"
     },
     {
-        id : 2,
+        id : "inprogress",
         name: "In Progress",
-        color: "blue"
+        color: "#C6762C"
     },
     {
-        id : 3,
+        id : "done",
         name: "Done",
-        color: "green"
+        color: "#7CC62C"
     }
 ]
 
