@@ -6,17 +6,17 @@ let columns = [
     {
         id : "todo",
         name: "ToDo",
-        color: "#C32CC6"
+        color: "orange"
     },
     {
         id : "inprogress",
         name: "In Progress",
-        color: "#C6762C"
+        color: "lightskyblue"
     },
     {
         id : "done",
         name: "Done",
-        color: "#7CC62C"
+        color: "limegreen"
     }
 ]
 
