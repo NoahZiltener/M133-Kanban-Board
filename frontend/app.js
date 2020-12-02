@@ -51,18 +51,14 @@ async function createColumns() {
         let id = element.parentElement.id
         element.addEventListener("submit", function (event) {
             event.preventDefault();
-            new FormData(element);
-            element.reset();
-        })
-
-        element.addEventListener('formdata', (event) => {
-            let data = event.formData;
+            let formdata = new FormData(element);
             let card = {
-                status: data.get("id"),
-                value: data.get("cardvalue")
+                status: formdata.get("id"),
+                value: formdata.get("cardvalue")
             }
             createCard(card);
             toggleForm(id);
+            element.reset();
         })
     })
 }
