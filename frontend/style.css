@@ -36,5 +36,18 @@ body {
   transition: 0.3s;
   margin: 5px;
   text-align: center;
-  cursor: move;
+}
+
+.createbutton {
+  margin-left: 50%;
+  margin-top: 1rem;
+}
+
+.form {
+  width: auto;
+  height: 5rem;
+}
+
+.hidden {
+  display: none;
 }
