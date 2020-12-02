@@ -16,7 +16,7 @@ async function createColumns() {
 
     columns.forEach(element => {
         html = `
-        <div class="column" id=${element.id}>
+        <div class="column" id=${element.id} ondrop="drop(event)" ondragover="allowDrop(event)">
             <h1 class="title" style="background-color: ${element.color}">${element.name}</h1>
             <ul class="list" id="${element.id + "list"}"></ul>
             <form class="form hidden card" id="${element.id + "form"}">
@@ -91,7 +91,7 @@ async function getCards() {
             let list = document.querySelector(`#${element.status + "list"}`);
 
             html = `
-            <li class="card" id="${element.id}">
+            <li class="card" id="${element.id}" draggable="true" ondragstart="drag(event)">
                 <p>${element.value}</p>
                 <button class="moveleft" type="button">←</button>
                 <button class="moveright" type="button">→</button>
@@ -172,4 +172,26 @@ async function deleteCard(id) {
         },
     })
     getCards();
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("id", ev.target.id);
+}
+
+function drop(ev) { 
+    ev.preventDefault();
+    let cardid = ev.dataTransfer.getData("id");
+
+    let target = ev.target;
+    while(!(columns.find(column => column.id == target.id))){
+        target = target.parentElement;
+    }
+
+    let card = cards.find(card => card.id == cardid);
+    card.status = target.id;
+    updateCard(card);
 }
