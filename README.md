@@ -3,8 +3,7 @@ Kanban Board for a group-project in the modul 133
 
 ## Teammitglieder
 
-Tschopp Joël
-Ziltener Noah
+Tschopp Joël, Ziltener Noah
 
 ## Installationsanleitung
 
