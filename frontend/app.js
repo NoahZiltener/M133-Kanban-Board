@@ -20,20 +20,20 @@ async function createColumns() {
             <h1 class="title" style="background-color: ${element.color}">${element.name}</h1>
             <ul class="list" id="${element.id + "list"}"></ul>
             <form class="form hidden card" id="${element.id + "form"}">
-                    <input type="text" name="cardvalue" required />
+                    <input type="text" name="cardvalue" id="${element.id + "createinput"}" tabindex="-1" required/>
                     <input type="hidden" name="id" value="${element.id}" />
                     <br>
-                    <button class="submitbutton" type="submit">Save</button>
+                    <button class="submitbutton"  type="submit">Save</button>
                     <button class="clearbutton" type="reset">Cancel</button>
             </form>
-            <button class="createbutton" id="${element.id + "createbutton"}" type="button">+</button>
+            <button class="formbutton" id="${element.id + "formbutton"}" type="button">+</button>
         </div>
         `;
 
         container.innerHTML += html;
     });
 
-    document.querySelectorAll(".createbutton").forEach(element => {
+    document.querySelectorAll(".formbutton").forEach(element => {
         let id = element.parentElement.id
         element.addEventListener('click', (event) => {
             toggleForm(id)
@@ -72,8 +72,8 @@ async function clearLists() {
 
 function toggleForm(id) {
     let form = document.querySelector(`#${id + "form"}`);
-    let button = document.querySelector(`#${id + "createbutton"}`);
-    button.classList.toggle("hidden");
+    let formbutton = document.querySelector(`#${id + "formbutton"}`);
+    formbutton.classList.toggle("hidden");
     form.classList.toggle("hidden");
 }
 
