@@ -1,9 +1,22 @@
-# M133-Kanban-Board
+# M133_Kanban_Board
+Kanban Board for a group-project in the modul 133
 
-Projekt von Noah Ziltener und Joël Tschopp
+## Teammitglieder
 
-Diese Applikation kann mit diesem Befehl in der console ausgeführt werden.
-deno run --allow-net --allow-read server.js
+Tschopp Joël
+Ziltener Noah
 
-Nachdem der Befehl eingegeben wurde, kann die Applikation auf diesem Link aufgerufen werden
-http://localhost:8000/
+## Installationsanleitung
+
+### Voraussetzung
+
+* Projekt ist Lokal gecloned
+* User befindet sich im root Verzeichniss des Projektes Ordner
+
+### Applikation starten
+
+* Terminal öffnen
+* In der Console folgenden Befehl eingeben:  
+``` deno run --allow-net --allow-read server.js ```
+* ``` localhost:8000 ``` in einem gewünschten Browser öffnen (ausser IE)
+* Auf [localhost](localhost:8000) kann das Kanban Board benutzt werden 
